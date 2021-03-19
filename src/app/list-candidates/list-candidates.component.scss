@@ -1,0 +1,7 @@
+.custom-table {
+  .row {
+    &:nth-child(even) {
+      background-color: #373737;
+    }
+  }
+}

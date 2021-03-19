@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="custom-table">
+    <div class="row">
+      <div class="col-md-2 col-sm-12">
+        <label>nome</label>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <label>email</label>
+      </div>
+      <div class="col-md-1 col-sm-12">
+        <label>idade</label>
+      </div>
+      <div class="col-md-2 col-sm-12">
+        <label>linkedin</label>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <label>tecnologias</label>
+      </div>
+      <div class="col-md-1 col-sm-12">
+        <label>ações</label>
+      </div>
+    </div>
+    <div *ngFor="let candidate of candidates" class="row">
+      <div class="col-md-2 col-sm-12">
+        <div>{{ candidate.name }}</div>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <div>{{ candidate.email }}</div>
+      </div>
+      <div class="col-md-1 col-sm-12">
+        <div>{{ candidate.age }}</div>
+      </div>
+      <div class="col-md-2 col-sm-12">
+        <div (click)="navigateToUrl(candidate.linkedin_url)">{{ candidate.linkedin_url }}</div>
+      </div>
+      <div class="col-md-3 col-sm-12">
+        <div>{{ candidate.candidate_technologies }}</div>
+      </div>
+      <div class="col-md-1 col-sm-12">
+        <div class="d-flex align-items-center justify-content-between">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <button (click)="toggleCreateModal()" class="btn btn-primary">Novo candidato</button>
+  </div>
+</div>
+
+<app-create-modal
+  *ngIf="isCreateModalOpen"
+  (handleCloseModal)="toggleCreateModal()">
+</app-create-modal>
