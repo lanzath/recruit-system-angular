@@ -1,0 +1,28 @@
+.custom-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  .content {
+      background-color:#373737;
+      width: 60%;
+      height: 500px;
+      border-radius: 25px;
+      padding: 3em;
+      .form-group {
+        .form-control {
+          margin-bottom: 1em;
+          background-color: black;
+          color: white;
+        }
+      }
+      footer {
+        gap: 1em;
+      }
+  }
+}

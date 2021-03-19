@@ -1,0 +1,25 @@
+<div class="custom-modal">
+  <div class="content">
+    <form [formGroup]="candidateForm">
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Nome" formControlName="name" [class.is-invalid]="name.dirty && name.invalid">
+        <input class="form-control" type="email" placeholder="Email" formControlName="email" [class.is-invalid]="email.dirty && email.invalid">
+        <input class="form-control" type="number" placeholder="Idade" formControlName="age" [class.is-invalid]="age.dirty && age.invalid">
+        <input class="form-control" type="text" placeholder="Linkedin" formControlName="linkedin_url" [class.is-invalid]="linkedin_url.dirty && linkedin_url.invalid">
+        <div>
+          <label>Tecnologias</label>
+          <div class="d-flex align-items-center">
+            <div class="mr-3 d-flex align-items-center" *ngFor="let technology of technologies">
+              <input type="checkbox" [value]="technology" (change)="handleTechnology($event)">
+              <div class="ml-2">{{ technology }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="d-flex align-items-center justify-content-center">
+        <button (click)="closeModal()" class="btn btn-danger">Cancelar</button>
+        <button (click)="onSubmit()" class="btn btn-primary">Salvar</button>
+      </footer>
+    </form>
+  </div>
+</div>
