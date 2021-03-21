@@ -22,4 +22,14 @@ export class CandidateService {
   postCandidates(candidate: Candidate): Observable<Candidate> {
     return this.http.post<Candidate>(`${this.baseUrl}/candidates`, candidate);
   }
+
+  // Update candidate
+  updateCandidate(candidate: Candidate): Observable<Candidate> {
+    return this.http.put<Candidate>(`${this.baseUrl}/candidates/${candidate.id}`, candidate);
+  }
+
+  // Delete candidate
+  deleteCandidate(candidate: Candidate): Observable<Candidate> {
+    return this.http.delete<Candidate>(`${this.baseUrl}/candidates/${candidate.id}`);
+  }
 }
