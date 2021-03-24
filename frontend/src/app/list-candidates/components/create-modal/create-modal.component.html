@@ -15,6 +15,7 @@
             </div>
           </div>
         </div>
+        <span *ngIf="technology.dirty && technology.invalid" class="text-danger">Campo obrigatório</span>
       </div>
       <footer class="d-flex align-items-center justify-content-center">
         <button (click)="closeModal()" class="btn btn-danger">Cancelar</button>
